@@ -11,7 +11,7 @@ def makeHardLink(fromFile, toFile):
         if os.path.isdir(fromF):
             makeHardLink(fromF, toF)
         else:
-            cmdStr = "mklink /H \""+toF+"\" \""+fromF+"\""
+            cmdStr = "mklink /H \""+toF+"\" \"" + fromF+"\""
             print(cmdStr)
             p = os.popen(cmdStr)
             print(p)
@@ -19,5 +19,5 @@ def makeHardLink(fromFile, toFile):
 
 if __name__ == '__main__':
     sourcePath = input()
-    targetPath = os.getcwd()
+    targetPath = input()
     makeHardLink(sourcePath, targetPath)
